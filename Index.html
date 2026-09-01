@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jace Nance — Sports Business & Fan Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14120F;
+    --chalk:#F2EEE4;
+    --tan:#C98A4B;
+    --slate:#8A8477;
+    --accent:#D8491F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--ink);
+    color:var(--chalk);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  .wrap{ max-width:880px; margin:0 auto; padding:0 32px; }
+
+  /* HERO */
+  .hero{ padding:88px 0 56px; }
+  .hero-name{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(56px, 11vw, 108px);
+    line-height:0.92;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+  }
+  .hero-name .accent{ color:var(--accent); }
+  .hero-tag{
+    margin-top:18px;
+    max-width:520px;
+    font-size:17px;
+    color:#CFC9BB;
+  }
+  .statline{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border-top:1px solid rgba(242,238,228,0.18);
+  }
+  .stat{
+    flex:1 1 160px;
+    padding:16px 20px 16px 0;
+    border-right:1px solid rgba(242,238,228,0.12);
+  }
+  .stat:last-child{ border-right:none; }
+  .stat .num{
+    font-family:'Anton', sans-serif;
+    font-size:15px;
+    color:var(--tan);
+    letter-spacing:0.03em;
+  }
+  .stat .label{
+    font-size:12.5px;
+    color:var(--slate);
+    margin-top:4px;
+  }
+
+  /* SECTION SHARED */
+  section{ padding:52px 0; border-top:1px solid rgba(242,238,228,0.12); }
+  .section-label{
+    font-family:'Anton', sans-serif;
+    font-size:13px;
+    color:var(--accent);
+    letter-spacing:0.03em;
+    margin-bottom:16px;
+  }
+  .section-title{
+    font-family:'Anton', sans-serif;
+    font-size:32px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+
+  /* ABOUT */
+  .about-body{
+    max-width:620px;
+    font-size:16px;
+    color:#D9D4C7;
+  }
+  .focus-tags{
+    margin-top:24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .focus-tags span{
+    font-size:13px;
+    padding:6px 14px;
+    border:1px solid rgba(242,238,228,0.3);
+    border-radius:2px;
+    color:var(--chalk);
+  }
+
+  /* WORK */
+  .work-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1px;
+    background:rgba(242,238,228,0.14);
+    border:1px solid rgba(242,238,228,0.14);
+  }
+  .work-card{
+    background:var(--ink);
+    padding:28px;
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:24px;
+    align-items:start;
+  }
+  .work-mark{
+    font-family:'Anton', sans-serif;
+    font-size:34px;
+    color:rgba(242,238,228,0.16);
+  }
+  .work-title{
+    font-family:'Anton', sans-serif;
+    font-size:21px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .work-desc{
+    font-size:14.5px;
+    color:#C9C4B7;
+    max-width:480px;
+  }
+  .work-tags{
+    margin-top:12px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .work-tags span{
+    font-size:11.5px;
+    color:var(--tan);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .work-tags span::after{ content:"·"; margin-left:8px; color:rgba(242,238,228,0.25); }
+  .work-tags span:last-child::after{ content:""; }
+
+  /* EXPERIENCE */
+  .box-score{ display:flex; flex-direction:column; }
+  .bs-row{
+    display:grid;
+    grid-template-columns:110px 1fr 140px;
+    gap:16px;
+    padding:16px 0;
+    border-top:1px solid rgba(242,238,228,0.1);
+    align-items:baseline;
+  }
+  .bs-row:first-child{ border-top:none; }
+  .bs-role{ font-size:15px; font-weight:600; color:var(--chalk); }
+  .bs-org{ font-size:13.5px; color:var(--slate); margin-top:2px; }
+  .bs-period{
+    font-size:12.5px;
+    color:var(--tan);
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* FOOTER */
+  footer{
+    padding:56px 0 64px;
+    border-top:1px solid rgba(242,238,228,0.12);
+  }
+  .footer-title{
+    font-family:'Anton', sans-serif;
+    font-size:30px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .links a{
+    color:var(--ink);
+    background:var(--chalk);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    padding:12px 20px;
+    border-radius:2px;
+    transition:background 0.15s ease;
+  }
+  .links a:hover{ background:var(--tan); }
+  .links a.outline{
+    background:transparent;
+    color:var(--chalk);
+    border:1px solid rgba(242,238,228,0.35);
+  }
+  .links a.outline:hover{ border-color:var(--tan); color:var(--tan); background:transparent; }
+  .foot-meta{
+    margin-top:28px;
+    font-size:12.5px;
+    color:var(--slate);
+  }
+
+  @media (max-width:600px){
+    .wrap{ padding:0 22px; }
+    .hero{ padding:64px 0 40px; }
+    .work-card{ grid-template-columns:1fr; }
+    .work-mark{ display:none; }
+    .bs-row{ grid-template-columns:1fr; gap:4px; }
+    .bs-period{ text-align:left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-name">JACE<br><span class="accent">NANCE</span></div>
+    <p class="hero-tag">Sports business & fan engagement. Building toward NIL strategy, athlete marketing, and NBA front-office work — one portfolio piece at a time.</p>
+    <div class="statline">
+      <div class="stat"><div class="num">ECON</div><div class="label">University of Kentucky</div></div>
+      <div class="stat"><div class="num">MAY '27</div><div class="label">Graduation</div></div>
+      <div class="stat"><div class="num">LOUISVILLE, KY</div><div class="label">Based in</div></div>
+      <div class="stat"><div class="num">NBA / NIL</div><div class="label">Focus</div></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-label">ABOUT</div>
+    <div class="section-title">The Approach</div>
+    <p class="about-body">I'm an Economics student at the University of Kentucky building a career in sports business through self-directed work, not just credentials. I develop mock campaigns and fan engagement concepts to think like the front offices I want to work in — testing ideas on real teams, real fanbases, and real market gaps.</p>
+    <div class="focus-tags">
+      <span>NIL Strategy</span>
+      <span>Fan Engagement</span>
+      <span>Sponsorship & Partnerships</span>
+      <span>Athlete Marketing</span>
+      <span>Sports Analytics</span>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-label">SELECTED WORK</div>
+    <div class="section-title">Featured Projects</div>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="work-mark">01</div>
+        <div>
+          <div class="work-title">Wild Cat Pride</div>
+          <div class="work-desc">A digital fan engagement concept for Kentucky Basketball, built to turn every game into an interactive experience for students who attend but don't engage digitally beyond game day.</div>
+          <div class="work-tags"><span>Fan Engagement</span><span>NIL Integration</span><span>Campaign Design</span></div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-mark">02</div>
+        <div>
+          <div class="work-title">Rip City Pathfinders</div>
+          <div class="work-desc">A mock sponsorship pitch pairing the Portland Trail Blazers with Columbia Sportswear — extending an outdoor lifestyle brand into gameday, retail, and community activations.</div>
+          <div class="work-tags"><span>Sponsorship Pitch</span><span>Brand Partnership</span><span>NBA</span></div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-mark">03</div>
+        <div>
+          <div class="work-title">NBA Streetwear Carousel</div>
+          <div class="work-desc">A design and trend piece exploring how streetwear mines sports, prep, and '90s references — and where official team stores are missing the moment.</div>
+          <div class="work-tags"><span>Design</span><span>Trend Analysis</span><span>Brand Strategy</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">EXPERIENCE</div>
+    <div class="section-title">Track Record</div>
+    <div class="box-score">
+      <div class="bs-row">
+        <div class="bs-period">2025 — Present</div>
+        <div><div class="bs-role">Regional Scout</div><div class="bs-org">SponsorUnited</div></div>
+        <div></div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-period">2025 — Present</div>
+        <div><div class="bs-role">Game Day & Street Team Intern</div><div class="bs-org">Lexington Sporting Club</div></div>
+        <div></div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-period">2025 — Present</div>
+        <div><div class="bs-role">Media Coordinator</div><div class="bs-org">Flex In Full Color</div></div>
+        <div></div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-period">2021 — 2024</div>
+        <div><div class="bs-role">Marketing Intern</div><div class="bs-org">Purposeful Ponte Studio</div></div>
+        <div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-title">Let's Talk</div>
+    <div class="links">
+      <a href="mailto:Jaceh7202@gmail.com">Email Me</a>
+      <a class="outline" href="https://www.linkedin.com/in/jace-nance-b35066304" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="outline" href="./resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+    </div>
+    <div class="foot-meta">Jace Nance · Lexington, KY · #SportsBusiness #NBA #FanEngagement</div>
+  </footer>
+
+</div>
+</body>
+</html>
