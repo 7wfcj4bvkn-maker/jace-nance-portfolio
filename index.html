@@ -207,7 +207,35 @@
     color:var(--slate);
   }
 
+  /* NAV */
+  .nav{ display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-bottom:1px solid rgba(242,238,228,0.12); }
+  .nav-mark{ font-family:'Anton',sans-serif; font-size:18px; letter-spacing:0.04em; color:var(--chalk); text-decoration:none; }
+  .nav-mark span{ color:var(--accent); }
+  .nav-links{ display:flex; gap:22px; }
+  .nav-links a{ color:var(--slate); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; }
+  .nav-links a:hover{ color:var(--tan); }
+
+  /* STATUS BADGE */
+  .status{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; margin-left:10px; vertical-align:middle; border-radius:2px; }
+  .status.live{ background:var(--accent); color:var(--ink); }
+  .status.done{ border:1px solid rgba(242,238,228,0.3); color:var(--slate); }
+  .work-title{ display:flex; align-items:center; flex-wrap:wrap; }
+
+  .work-link{ display:inline-block; margin-top:14px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
+  .work-link:hover{ color:var(--tan); }
+
+  /* EXPERIENCE DETAIL */
+  .bs-detail{ font-size:13.5px; color:#BDB7A9; margin-top:6px; max-width:520px; }
+
+  /* NOW */
+  .now-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .now-card{ border:1px solid rgba(242,238,228,0.14); padding:22px; }
+  .now-card .k{ font-family:'Anton',sans-serif; font-size:13px; color:var(--tan); letter-spacing:0.04em; margin-bottom:8px; }
+  .now-card p{ font-size:14px; color:#C9C4B7; }
+
   @media (max-width:600px){
+    .nav-links{ gap:14px; }
+    .nav-links a{ font-size:11.5px; }
     .wrap{ padding:0 22px; }
     .hero{ padding:64px 0 40px; }
     .work-card{ grid-template-columns:1fr; }
@@ -220,13 +248,23 @@
 <body>
 <div class="wrap">
 
+  <nav class="nav">
+    <a class="nav-mark" href="#">JN<span>.</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#now">Now</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <div class="hero">
     <div class="hero-name">JACE<br><span class="accent">NANCE</span></div>
-    <p class="hero-tag">Sports business & fan engagement. Building toward NIL strategy, athlete marketing, and NBA front-office work — one portfolio piece at a time.</p>
+    <p class="hero-tag">Sports business & fan engagement. Building toward NIL strategy, athlete marketing, and NBA front-office work through real matchday reps, brand and social work, and self-directed pitches.</p>
     <div class="statline">
       <div class="stat"><div class="num">ECON</div><div class="label">University of Kentucky</div></div>
       <div class="stat"><div class="num">MAY '27</div><div class="label">Graduation</div></div>
-      <div class="stat"><div class="num">LOUISVILLE, KY</div><div class="label">Based in</div></div>
+      <div class="stat"><div class="num">OPEN</div><div class="label">To relocation</div></div>
       <div class="stat"><div class="num">NBA / NIL</div><div class="label">Focus</div></div>
     </div>
   </div>
@@ -234,7 +272,7 @@
   <section id="about">
     <div class="section-label">ABOUT</div>
     <div class="section-title">The Approach</div>
-    <p class="about-body">I'm an Economics student at the University of Kentucky building a career in sports business through self-directed work, not just credentials. I develop mock campaigns and fan engagement concepts to think like the front offices I want to work in — testing ideas on real teams, real fanbases, and real market gaps.</p>
+    <p class="about-body">I'm an Economics student at the University of Kentucky building a career in sports business through hands-on work, not just credentials. On matchdays I'm working fan experience for Lexington Sporting Club; the rest of the week I'm creating content as a media coordinator and building mock pitches that think like the front offices I want to work in — testing ideas on real teams, real fanbases, and real market gaps.</p>
     <div class="focus-tags">
       <span>NIL Strategy</span>
       <span>Fan Engagement</span>
@@ -252,25 +290,35 @@
       <div class="work-card">
         <div class="work-mark">01</div>
         <div>
-          <div class="work-title">Wild Cat Pride</div>
-          <div class="work-desc">A digital fan engagement concept for Kentucky Basketball, built to turn every game into an interactive experience for students who attend but don't engage digitally beyond game day.</div>
-          <div class="work-tags"><span>Fan Engagement</span><span>NIL Integration</span><span>Campaign Design</span></div>
+          <div class="work-title">Celtics × Vistaprint: Did the Patch Pay Off?<span class="status done">Valuation</span></div>
+          <div class="work-desc">A valuation of Vistaprint’s ~$50M Celtics jersey patch deal (2020–24) using only public data. Finals TV exposure alone covered about 20% of the fee in just 11 games. Yet Vistaprint walked away a year before the title, a lesson in why exposure isn’t the same as business results.</div>
+          <div class="work-tags"><span>Sponsorship Valuation</span><span>Media Analysis</span><span>NBA</span></div>
+          <a class="work-link" href="https://claude.ai/artifact/ENEh1R9cckMZicjZyTJwFV" target="_blank" rel="noopener">View the deck →</a>
         </div>
       </div>
 
       <div class="work-card">
         <div class="work-mark">02</div>
         <div>
-          <div class="work-title">Rip City Pathfinders</div>
-          <div class="work-desc">A mock sponsorship pitch pairing the Portland Trail Blazers with Columbia Sportswear — extending an outdoor lifestyle brand into gameday, retail, and community activations.</div>
-          <div class="work-tags"><span>Sponsorship Pitch</span><span>Brand Partnership</span><span>NBA</span></div>
+          <div class="work-title">Wild Cat Pride<span class="status done">Concept</span></div>
+          <div class="work-desc">A digital fan engagement concept for Kentucky Basketball, built to turn every game into an interactive experience for students who attend but don't engage digitally beyond game day.</div>
+          <div class="work-tags"><span>Fan Engagement</span><span>NIL Integration</span><span>Campaign Design</span></div>
         </div>
       </div>
 
       <div class="work-card">
         <div class="work-mark">03</div>
         <div>
-          <div class="work-title">NBA Streetwear Carousel</div>
+          <div class="work-title">Rip City Pathfinders<span class="status done">Pitch</span></div>
+          <div class="work-desc">A mock sponsorship pitch pairing the Portland Trail Blazers with Columbia Sportswear — extending an outdoor lifestyle brand into gameday, retail, and community activations.</div>
+          <div class="work-tags"><span>Sponsorship Pitch</span><span>Brand Partnership</span><span>NBA</span></div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-mark">04</div>
+        <div>
+          <div class="work-title">NBA Streetwear Carousel<span class="status done">Published</span></div>
           <div class="work-desc">A design and trend piece exploring how streetwear mines sports, prep, and '90s references — and where official team stores are missing the moment.</div>
           <div class="work-tags"><span>Design</span><span>Trend Analysis</span><span>Brand Strategy</span></div>
         </div>
@@ -284,36 +332,56 @@
     <div class="section-title">Track Record</div>
     <div class="box-score">
       <div class="bs-row">
-        <div class="bs-period">2025 — Present</div>
-        <div><div class="bs-role">Regional Scout</div><div class="bs-org">SponsorUnited</div></div>
+        <div class="bs-period">2026 — Present</div>
+        <div><div class="bs-role">Matchday Marketing &amp; Fan Engagement Intern</div><div class="bs-org">Lexington Sporting Club</div>
+          <div class="bs-detail">Matchday fan experience and street team activations that drive attendance and grassroots support for the club.</div></div>
+        <div></div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-period">2026 — Present</div>
+        <div><div class="bs-role">Regional Scout</div><div class="bs-org">SponsorUnited</div>
+          <div class="bs-detail">Tracking sponsorship and partnership activity across teams, leagues, and brands for a sponsorship intelligence platform.</div></div>
         <div></div>
       </div>
       <div class="bs-row">
         <div class="bs-period">2025 — Present</div>
-        <div><div class="bs-role">Game Day & Street Team Intern</div><div class="bs-org">Lexington Sporting Club</div></div>
+        <div><div class="bs-role">Media Coordinator</div><div class="bs-org">Flex In Full Color</div>
+          <div class="bs-detail">Create and manage social content, lead marketing volunteers, and coordinate event promotion and media outreach.</div></div>
         <div></div>
       </div>
       <div class="bs-row">
-        <div class="bs-period">2025 — Present</div>
-        <div><div class="bs-role">Media Coordinator</div><div class="bs-org">Flex In Full Color</div></div>
+        <div class="bs-period">Ongoing</div>
+        <div><div class="bs-role">Youth Soccer Coach</div><div class="bs-org">Lil Kickers</div>
+          <div class="bs-detail">Coaching kids' soccer: leading sessions, keeping young players engaged, and working with parents.</div></div>
         <div></div>
       </div>
       <div class="bs-row">
         <div class="bs-period">2021 — 2024</div>
-        <div><div class="bs-role">Marketing Intern</div><div class="bs-org">Purposeful Ponte Studio</div></div>
+        <div><div class="bs-role">Marketing Intern</div><div class="bs-org">Purposeful Ponte Studio</div>
+          <div class="bs-detail">Scheduled social posts, tracked engagement analytics, and supported campaigns, promotional events, and brand messaging.</div></div>
         <div></div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <section id="now">
+    <div class="section-label">CURRENTLY</div>
+    <div class="section-title">On the Clock</div>
+    <div class="now-grid">
+      <div class="now-card"><div class="k">MATCHDAYS</div><p>Working fan engagement and street team for Lexington Sporting Club.</p></div>
+      <div class="now-card"><div class="k">CONTENT</div><p>Creating social content and leading marketing volunteers as Media Coordinator for Flex In Full Color.</p></div>
+      <div class="now-card"><div class="k">LOOKING FOR</div><p>Summer 2027 internships in sports business: NBA, agencies, NIL, and partnerships.</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
     <div class="footer-title">Let's Talk</div>
     <div class="links">
       <a href="mailto:Jaceh7202@gmail.com">Email Me</a>
       <a class="outline" href="https://www.linkedin.com/in/jace-nance-b35066304" target="_blank" rel="noopener">LinkedIn</a>
       <a class="outline" href="./resume.pdf" target="_blank" rel="noopener">Download Resume</a>
     </div>
-    <div class="foot-meta">Jace Nance · Lexington, KY · #SportsBusiness #NBA #FanEngagement</div>
+    <div class="foot-meta">Jace Nance · Updated November 2026</div>
   </footer>
 
 </div>
