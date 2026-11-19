@@ -224,6 +224,16 @@
   .work-link{ display:inline-block; margin-top:14px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
   .work-link:hover{ color:var(--tan); }
 
+  /* GALLERY */
+  .gallery{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  @media (max-width:860px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+  .g-item{ display:flex; flex-direction:column; text-decoration:none; color:var(--chalk); border:1px solid rgba(242,238,228,0.14); background:#1B1915; transition:border-color 0.15s ease; }
+  .g-item:hover{ border-color:var(--tan); }
+  .g-item img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; display:block; background:#0E0D0B; }
+  .g-cap{ padding:14px 16px 16px; }
+  .g-title{ font-family:'Anton',sans-serif; font-size:16px; text-transform:uppercase; letter-spacing:0.02em; }
+  .g-sub{ font-size:12.5px; color:var(--slate); margin-top:2px; }
+
   /* EXPERIENCE DETAIL */
   .bs-detail{ font-size:13.5px; color:#BDB7A9; margin-top:6px; max-width:520px; }
 
@@ -234,6 +244,7 @@
   .now-card p{ font-size:14px; color:#C9C4B7; }
 
   @media (max-width:600px){
+    .gallery{ grid-template-columns:1fr; }
     .nav-links{ gap:14px; }
     .nav-links a{ font-size:11.5px; }
     .wrap{ padding:0 22px; }
@@ -252,6 +263,7 @@
     <a class="nav-mark" href="#">JN<span>.</span></a>
     <div class="nav-links">
       <a href="#work">Work</a>
+      <a href="#design">Design</a>
       <a href="#experience">Experience</a>
       <a href="#now">Now</a>
       <a href="#contact">Contact</a>
@@ -303,6 +315,7 @@
           <div class="work-title">Wild Cat Pride<span class="status done">Concept</span></div>
           <div class="work-desc">A digital fan engagement concept for Kentucky Basketball, built to turn every game into an interactive experience for students who attend but don't engage digitally beyond game day.</div>
           <div class="work-tags"><span>Fan Engagement</span><span>NIL Integration</span><span>Campaign Design</span></div>
+          <a class="work-link" href="./wild-cat-pride.jpg" target="_blank" rel="noopener">View the project →</a>
         </div>
       </div>
 
@@ -312,6 +325,7 @@
           <div class="work-title">Rip City Pathfinders<span class="status done">Pitch</span></div>
           <div class="work-desc">A mock sponsorship pitch pairing the Portland Trail Blazers with Columbia Sportswear — extending an outdoor lifestyle brand into gameday, retail, and community activations.</div>
           <div class="work-tags"><span>Sponsorship Pitch</span><span>Brand Partnership</span><span>NBA</span></div>
+          <a class="work-link" href="./rip-city-pathfinders.pdf" target="_blank" rel="noopener">View the pitch →</a>
         </div>
       </div>
 
@@ -321,9 +335,21 @@
           <div class="work-title">NBA Streetwear Carousel<span class="status done">Published</span></div>
           <div class="work-desc">A design and trend piece exploring how streetwear mines sports, prep, and '90s references — and where official team stores are missing the moment.</div>
           <div class="work-tags"><span>Design</span><span>Trend Analysis</span><span>Brand Strategy</span></div>
+          <a class="work-link" href="./nba-streetwear-carousel.pdf" target="_blank" rel="noopener">View the carousel →</a>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="section-label">DESIGN &amp; CONTENT</div>
+    <div class="section-title">From the Feed</div>
+    <div class="gallery">
+      <a class="g-item" href="./kyrie-irving-graphic.jpg" target="_blank" rel="noopener"><img style="object-fit:contain;object-position:center;background:#ECEEF1" src="./kyrie-irving-graphic.jpg" alt="Custom season stat graphic for Kyrie Irving" loading="lazy"><div class="g-cap"><div class="g-title">Kyrie Irving Season Graphic</div><div class="g-sub">Player graphic · 2024-25</div></div></a>
+      <a class="g-item" href="./ja-morant-social-post.jpg" target="_blank" rel="noopener"><img style="object-fit:contain;object-position:center;background:#0E0D0B" src="./ja-morant-social-post.jpg" alt="Ja Morant Grizzlies social post with layered photo collage" loading="lazy"><div class="g-cap"><div class="g-title">Ja Morant “Back in the Crib”</div><div class="g-sub">Grizzlies social post concept</div></div></a>
+      <a class="g-item" href="./grizzlies-city-edition.jpg" target="_blank" rel="noopener"><img src="./grizzlies-city-edition.jpg" alt="Memphis Grizzlies City Edition jersey graphic" loading="lazy"><div class="g-cap"><div class="g-title">Grizzlies City Edition</div><div class="g-sub">Jersey launch graphic</div></div></a>
+      <a class="g-item" href="./teamwork-job-search.jpg" target="_blank" rel="noopener"><img src="./teamwork-job-search.jpg" alt="Infographic on league office vs team-level hiring cycles" loading="lazy"><div class="g-cap"><div class="g-title">Breaking Into Sports Business</div><div class="g-sub">LinkedIn post · Job search insights</div></div></a>
     </div>
   </section>
 
